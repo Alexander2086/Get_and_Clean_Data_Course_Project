@@ -52,7 +52,7 @@ Start reading files:
      
 In step  4 it is told to appropriately label the data set with descriptive variable names. 
 Part of step 4 I do here  - IMO, labels of the variables in the features dataframe are quite descriptive (especially in the presence of the codebook), 
-the only thing I wanted to change - is to remove symbols ")", "(", ",", "-". A don't do all of them in lower case, because they lose readability in this case.
+the only thing I wanted to change - is to remove symbols ")", "(", ",", "-". I don't do all of them in lower case, because they lose readability in this case.
 
 
      features$V2<-gsub("[(),-]", "", features$V2)
@@ -61,7 +61,7 @@ the only thing I wanted to change - is to remove symbols ")", "(", ",", "-". A d
 
 Further we start readind files from test folder and train folder, combining them into one dataset - dataset_merged - with proper names of the variables (step 1 of the task):
 
-At the same time we assign activity names to the activities ids in the data set (step 3 of the task)
+At the same time we assign activity names to the activitiy ids in the data set (step 3 of the task)
 
 Remark: on this stage I should have written a function in order not to write the same script twice for test and train data, but cause there are only 2 datasets I haven't
 done that. In case of 3 or more datsets I would have written a function.
@@ -166,7 +166,7 @@ I haven't found any R fucntions to do it quickly, that why I used ddply function
       }
 
 
-# moving to directory up
+moving to directory up
      setwd("..")
 
 Writing final file

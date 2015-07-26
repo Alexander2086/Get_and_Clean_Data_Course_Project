@@ -106,7 +106,7 @@ fBodyBodyGyroJerkMagmeanFreq
 activity - is the type of activity the subject performed
 subject.id - id of the person, taking part in the research
 
-all the other - averages of the corresponding variables (I don't give their description here cause it is included in the links above - it's much better in all cases to get the info from primary source.
+all the other - averages of the corresponding variables (I don't give their description here cause it is included in the links above - it's much better in all cases to get the info from primary source).
 
 
 
