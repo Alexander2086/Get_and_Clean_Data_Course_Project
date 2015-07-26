@@ -1,0 +1,112 @@
+
+For the preparation of the data in dataset.txt it was used the data from the following link:
+
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+
+All the necessary information about the data used can be found in the .zip archive by the link above (file README.txt) or by the link below:
+
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+
+The data in the dataset.txt was obtained the following way:
+
+ - test and train datasets were merged with parrallel assgning proper names to variables and factors
+ - from all 561 variables (described in file features_info.txt of the .zip archive) the only variables measuring mean and standard deviation were choosen.
+ - for each activity and each subject an average of each variable (chosen in p.2) was calculated.
+
+So, the final dataset (dataset.txt) includes the following columns:
+
+
+activity
+subject.id
+tBodyAccmeanX
+tBodyAccmeanY
+tBodyAccmeanZ
+tBodyAccstdX
+tBodyAccstdY
+tBodyAccstdZ
+tGravityAccmeanX
+tGravityAccmeanY
+tGravityAccmeanZ
+tGravityAccstdX
+tGravityAccstdY
+tGravityAccstdZ
+tBodyAccJerkmeanX
+tBodyAccJerkmeanY
+tBodyAccJerkmeanZ
+tBodyAccJerkstdX
+tBodyAccJerkstdY
+tBodyAccJerkstdZ
+tBodyGyromeanX
+tBodyGyromeanY
+tBodyGyromeanZ
+tBodyGyrostdX
+tBodyGyrostdY
+tBodyGyrostdZ
+tBodyGyroJerkmeanX
+tBodyGyroJerkmeanY
+tBodyGyroJerkmeanZ
+tBodyGyroJerkstdX
+tBodyGyroJerkstdY
+tBodyGyroJerkstdZ
+tBodyAccMagmean
+tBodyAccMagstd
+tGravityAccMagmean
+tGravityAccMagstd
+tBodyAccJerkMagmean
+tBodyAccJerkMagstd
+tBodyGyroMagmean
+tBodyGyroMagstd
+tBodyGyroJerkMagmean
+tBodyGyroJerkMagstd
+fBodyAccmeanX
+fBodyAccmeanY
+fBodyAccmeanZ
+fBodyAccstdX
+fBodyAccstdY
+fBodyAccstdZ
+fBodyAccmeanFreqX
+fBodyAccmeanFreqY
+fBodyAccmeanFreqZ
+fBodyAccJerkmeanX
+fBodyAccJerkmeanY
+fBodyAccJerkmeanZ
+fBodyAccJerkstdX
+fBodyAccJerkstdY
+fBodyAccJerkstdZ
+fBodyAccJerkmeanFreqX
+fBodyAccJerkmeanFreqY
+fBodyAccJerkmeanFreqZ
+fBodyGyromeanX
+fBodyGyromeanY
+fBodyGyromeanZ
+fBodyGyrostdX
+fBodyGyrostdY
+fBodyGyrostdZ
+fBodyGyromeanFreqX
+fBodyGyromeanFreqY
+fBodyGyromeanFreqZ
+fBodyAccMagmean
+fBodyAccMagstd
+fBodyAccMagmeanFreq
+fBodyBodyAccJerkMagmean
+fBodyBodyAccJerkMagstd
+fBodyBodyAccJerkMagmeanFreq
+fBodyBodyGyroMagmean
+fBodyBodyGyroMagstd
+fBodyBodyGyroMagmeanFreq
+fBodyBodyGyroJerkMagmean
+fBodyBodyGyroJerkMagstd
+fBodyBodyGyroJerkMagmeanFreq
+
+
+activity - is the type of activity the subject performed
+subject.id - id of the person, taking part in the research
+
+all the other - averages of the corresponding variables (I don't give their description here cause it is included in the links above - it's much better in all cases to get the info from primary source.
+
+
+
