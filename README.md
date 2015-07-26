@@ -169,6 +169,7 @@ It is worth noting, that I created wide format dataset instead of long (as far a
 
 
 moving to directory up
+     
      setwd("..")
 
 Writing final file
