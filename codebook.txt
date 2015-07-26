@@ -19,7 +19,6 @@ The data in the dataset.txt was obtained the following way:
 
 So, the final dataset (dataset.txt) includes the following columns:
 
-
 activity
 subject.id
 tBodyAccmeanX
@@ -68,39 +67,27 @@ fBodyAccmeanZ
 fBodyAccstdX
 fBodyAccstdY
 fBodyAccstdZ
-fBodyAccmeanFreqX
-fBodyAccmeanFreqY
-fBodyAccmeanFreqZ
 fBodyAccJerkmeanX
 fBodyAccJerkmeanY
 fBodyAccJerkmeanZ
 fBodyAccJerkstdX
 fBodyAccJerkstdY
 fBodyAccJerkstdZ
-fBodyAccJerkmeanFreqX
-fBodyAccJerkmeanFreqY
-fBodyAccJerkmeanFreqZ
 fBodyGyromeanX
 fBodyGyromeanY
 fBodyGyromeanZ
 fBodyGyrostdX
 fBodyGyrostdY
 fBodyGyrostdZ
-fBodyGyromeanFreqX
-fBodyGyromeanFreqY
-fBodyGyromeanFreqZ
 fBodyAccMagmean
 fBodyAccMagstd
-fBodyAccMagmeanFreq
 fBodyBodyAccJerkMagmean
 fBodyBodyAccJerkMagstd
-fBodyBodyAccJerkMagmeanFreq
 fBodyBodyGyroMagmean
 fBodyBodyGyroMagstd
-fBodyBodyGyroMagmeanFreq
 fBodyBodyGyroJerkMagmean
 fBodyBodyGyroJerkMagstd
-fBodyBodyGyroJerkMagmeanFreq
+
 
 
 activity - is the type of activity the subject performed

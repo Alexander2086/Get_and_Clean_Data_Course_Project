@@ -138,32 +138,34 @@ done that. In case of 3 or more datsets I would have written a function.
     #dim(dataset_merged)
 
 
-In step 4 it is demanded to extract only the measurements on the mean and standard deviation. I understood that as getting variables including "mean" or "std" in the name:
+In step 4 it is demanded to extract only the measurements on the mean and standard deviation. I understood that as getting variables including "mean" or "std" in the name, 
+but excluding variables containing "meanFreq" and "Mean" in the name. Variables containing  "meanFreq" in the name - is not an average of the measurement, but a weighted average of several measurements, variables containing "Mean" in the name - variables describing an angle.
 
 
-    dataset_fin <- dataset_merged[,c("activity.id", "activity", "subject.id", c(subset(names(dataset_merged), as.logical(grepl("mean",names(dataset_merged))+grepl("std",names(dataset_merged))))))]
+    dataset_fin <- dataset_merged[,c("activity", "subject.id", c(subset(names(dataset_merged),      as.logical(grepl("mean",names(dataset_merged))+grepl("std",names(dataset_merged))-grepl("Freq",names(dataset_merged))))))]
 
 
 In step 5 it is demanded to  create a second, independent tidy data set with the average of each variable for each activity and each subject. 
 I haven't found any R fucntions to do it quickly, that why I used ddply function and "for" cycle.
+It is worth noting, that I created wide format dataset instead of long (as far as I know/think both are possible)
 
 
+for (i in c(1:(length(names(dataset_fin))-2)))
 
-     for (i in c(1:(length(names(dataset_fin))-3)))
+{
 
-     {
+if (i == 1)  {
+                 dataset <- ddply(dataset_fin, .(activity, subject.id), here(summarize), mean = mean(get(names(dataset_fin)[3])))
+                 names(dataset)[3] <- names(dataset_fin)[3]  
+              }
+else          {
 
-     if (i == 1)   {
-                       dataset <- ddply(dataset_fin, .(activity, subject.id), here(summarize), mean = mean(get(names(dataset_fin)[4])))
-                       names(dataset)[3] <- names(dataset_fin)[4]  
-                   }
-     else          {
+		dataset_temp <- ddply(dataset_fin, .(activity, subject.id),here(summarise),mean = mean(get(names(dataset_fin)[2+i])))
+		dataset <- data.frame(dataset, dataset_temp[3])
+		names(dataset)[2+i] <- names(dataset_fin)[2+i]
+              }
+}
 
-    	  	       dataset_temp <- ddply(dataset_fin, .(activity, subject.id),here(summarise),mean = mean(get(names(dataset_fin)[3+i])))
-	               dataset <- data.frame(dataset, dataset_temp[3])
-		       names(dataset)[2+i] <- names(dataset_fin)[3+i]
-                    } 
-      }
 
 
 moving to directory up
