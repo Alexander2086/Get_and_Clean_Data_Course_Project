@@ -150,21 +150,21 @@ I haven't found any R fucntions to do it quickly, that why I used ddply function
 It is worth noting, that I created wide format dataset instead of long (as far as I know/think both are possible)
 
 
-for (i in c(1:(length(names(dataset_fin))-2)))
+     for (i in c(1:(length(names(dataset_fin))-2)))
 
-{
+     {
 
-if (i == 1)  {
-                 dataset <- ddply(dataset_fin, .(activity, subject.id), here(summarize), mean = mean(get(names(dataset_fin)[3])))
-                 names(dataset)[3] <- names(dataset_fin)[3]  
-              }
-else          {
-
-		dataset_temp <- ddply(dataset_fin, .(activity, subject.id),here(summarise),mean = mean(get(names(dataset_fin)[2+i])))
-		dataset <- data.frame(dataset, dataset_temp[3])
-		names(dataset)[2+i] <- names(dataset_fin)[2+i]
-              }
-}
+     if (i == 1)  {
+                      dataset <- ddply(dataset_fin, .(activity, subject.id), here(summarize), mean = mean(get(names(dataset_fin)[3])))
+                      names(dataset)[3] <- names(dataset_fin)[3]  
+                   }
+     else          {
+ 
+     		     dataset_temp <- ddply(dataset_fin, .(activity, subject.id),here(summarise),mean = mean(get(names(dataset_fin)[2+i])))
+		     dataset <- data.frame(dataset, dataset_temp[3])
+		     names(dataset)[2+i] <- names(dataset_fin)[2+i]
+                   }
+     }
 
 
 
